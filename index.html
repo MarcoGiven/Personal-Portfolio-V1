@@ -31,7 +31,7 @@
         <div class="row banner">
             <div class="banner-text">
                 <h1 class="responsive-headline">Hello, I'm Marco Given.</h1>
-                <h3>A dedicated computer science student, at <span>Temple University</span>.</h3>
+                <h3>I'm a dedicated computer science student, at <span>Temple University</span>.</h3>
                 <h3>Currently expanding my skills in <span>C, Java, Python, and web development.</span></h3>
                 <hr />
                 <ul class="social">
@@ -52,23 +52,13 @@
         <section id="about">
             <div class="row">
                 <div class="three columns">
-                    <img class="profile-pic" src="images/headshotpic.jpg" alt="" />
+                    <img class="profile-pic lazy-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/headshotpic.jpg" alt="Profile Picture" loading="lazy" />
                 </div>
                 <div class="nine columns main-col">
                     <h2>About Me</h2>
-                    <p>📍 Philadelphia, Pennsylvania <br>Hi! I'm a nineteen-year old college student & software developer from North Plainfield, New Jersey. <br>I've always loved anything technology related, from building custom PCs & mechanical keyboards, to hacking/modding retro handhelds like my Nintendo 3Ds and PSVita, and a love and appreciation of video games. <br>Otherwise, ask me about bouldering, or what i'm reading!</p>
+                    <p>📍 Philadelphia, Pennsylvania <br>Hi! I'm a 19 year-old college student & software developer from North Plainfield, NJ. <br>I've always loved anything technology related, from building custom PCs & mechanical keyboards, to hacking/modding retro handhelds like my Nintendo 3Ds and PSVita, and a love and appreciation of video games. <br>Otherwise, ask me about bouldering, or what i'm reading!</p>
                     <div class="row">
-                        <div class="columns contact-details">
-                            <h2>Contact Details</h2>
-                            <p class="address">
-                                <span>Marco Given</span><br>
-                                <span>1300 Cecil B. Moore Avenue<br>
-                                    Philadelphia, PA 19122 US
-                                </span><br>
-                                <span>(908)644-5801</span><br>
-                                <span>marcogiven15@gmail.com</span>
-                            </p>
-                        </div>
+                        
                         <div class="columns download">
                             <p>
                                 <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
@@ -96,7 +86,7 @@
                         <div class="twelve columns">
                             <h3>Temple University</h3>
                             <p class="info">B.S. in Computer Science <span>&bull;</span> <em class="date">May 2027</em></p>
-                            <p>I'm currently a sophomore Computer Science student in Temple University's College of Science and Technology Honors Program. From my coursework, I'm skilled in <span>Java, C</span>, as well as math concepts up to Calculus II and Discrete Math. On my own, I've developed understandings in <span>Python, HTML/CSS for web development, and some C# in Unity</span>. I have experience in student leadership as an Honors Ambassadors to Temple Coordinator, and Honors Peer mentor. <br><span>Right now i'm actively engaged in university policy through the General Education Executive Committee, event organization, and technical projects.</span>
+                            <p>I'm a sophomore Computer Science major at Temple University in the College of Science and Technology & Honors Program. I'm skilled in <span>Java and C</span> from coursework, and have self-taught understandings in <span>Python, HTML/CSS, and some C# in Unity</span>. I have experience in leadership as an Honors Ambassadors Coordinator, and Peer mentor. <br><span>Right now I'm actively engaged in university policy through the General Education Executive Committee, event organization, and technical projects.</span>
                             </p>
                         </div>
                     </div> <!-- item end-->
@@ -117,7 +107,7 @@
             <!-- Work Experience -->
             <div class="row work">
                 <div class="three columns header-col">
-                    <h1><span>Work</span></h1>
+                    <h1 ><span>Work</span></h1>
                 </div>
 
                 <div class="nine columns main-col">
@@ -126,7 +116,7 @@
                             <h3>Temple University Honors Program</h3>
                             <p class="info">Honors Student Worker <span>&bull;</span> <em class="date">February 2024 - Present</em></p>
                             <p>
-                                I'm currently working in a project-based role as an Honors Program student worker. Other than assisting with advising check-in, I work on projects for the Temple University Honors Program such as cleaning and organizing data of honors courses, <span>updating website content</span>, and <span>utilizing Tableau for data visualization</span> for internal reports. 
+                                Currently in a project-based role as an Honors Program student worker. Other than assisting with advising check-in, I work on projects for the Temple University Honors Program such as cleaning and organizing data of honors courses, <span>updating website content</span>, and <span>utilizing Tableau for data visualization</span> for internal reports. 
                             </p>
                         </div>
                     </div> <!-- item end-->
@@ -141,7 +131,7 @@
             <!-- Skills -->
             <div class="row skill">
                 <div class="three columns header-col">
-                    <h1><span>Skills</span></h1>
+                    <h1 class="project-other"><span>Skills</span></h1>
                 </div>
                 <div class="nine columns main-col">
                     <p>
@@ -154,12 +144,9 @@
                         <span class="skill-tag">Unity</span>
                         <span class="skill-tag">Blender</span>
                         <span class="skill-tag">Ultimaker Cura</span>
-                        <span class="skill-tag">Clion</span>
-                        <span class="skill-tag">Eclipse</span>
-                        <span class="skill-tag">VSCode</span>
+                        
                         <br>
-                        <strong>Skills:</strong><br>
-                        <span class="skill-tag">Object-Oriented Programming</span>
+                        
                         <span class="skill-tag">Web Development</span>
                         <span class="skill-tag">Shell Scripting</span>
                         <span class="skill-tag">Data Visualization</span>
@@ -172,7 +159,7 @@
 
             <div class="row certs">
                 <div class="three columns header-col">
-                    <h1><span>Certificates</span></h1>
+                    <h1 class="project-other"><span>Certificates</span></h1>
                 </div>
                 <div class="nine columns main-col">
                     <p>
@@ -337,6 +324,37 @@
         <script src="js/jquery.fittext.js"></script>
         <script src="js/magnific-popup.js"></script>
         <script src="js/init.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Lazy loading images
+                const images = document.querySelectorAll('.lazy-image');
+                
+                const loadImage = (image) => {
+                    image.classList.add('loading');
+                    const src = image.getAttribute('data-src');
+                    if (!src) return;
+                    
+                    image.src = src;
+                    image.addEventListener('load', () => {
+                        image.classList.remove('loading');
+                        image.classList.add('loaded');
+                    });
+                };
+            
+                // Intersection Observer for lazy loading
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            loadImage(entry.target);
+                            imageObserver.unobserve(entry.target);
+                        }
+                    });
+                });
+            
+                images.forEach(img => imageObserver.observe(img));
+            });
+            </script>
 
 </body>
 </DOCTYPE>

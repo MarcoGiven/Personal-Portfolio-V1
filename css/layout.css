@@ -28,6 +28,7 @@
     --smallui: 0.75rem/1.8em var(--ff-text);
 }
 
+
 /* Layout */
 body {
     background: var(--bg-white);
@@ -46,7 +47,7 @@ main {
 header {
     position: relative;
     height: 100vh;
-    background: var(--text-grey) url("../images/bgimage.jpg") no-repeat center/cover;
+    background: var(--text-grey) url("../images/matt-benson-rvfm_b1C6lc-unsplash.jpg") no-repeat top/cover;
     text-align: center;
     overflow: hidden;
     display: flex;
@@ -79,7 +80,7 @@ header .banner-text {
 }
 
 header .banner-text h1 {
-    font-size: 6.5rem !important; /* Force override any inherited sizes */
+    font-size: 8rem !important; /* Force override any inherited sizes */
     font-family: "opensans-bold", sans-serif;
     font-weight: bold;
     line-height: 1.2;
@@ -110,7 +111,7 @@ header .banner-text h1 {
   }
 
 header .banner-text h3 {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
     font-family: "opensans-bold", sans-serif;
     font-weight: normal;
     line-height: 1.4;
@@ -135,7 +136,7 @@ header .banner-text h3 span, header .banner-text h3 a {
 }
 
 header .banner-text hr {
-    width: 60%;
+    width: 75%;
     margin: 18px auto 24px auto;
     border: 1px solid rgba(255, 255, 255, 0.75);
 }
@@ -143,7 +144,7 @@ header .banner-text hr {
 /* Header social links */
 header .social {
     margin: 24px 0;
-    font-size: 3.5rem; /* Slightly increased font size */
+    font-size: 4rem; /* Slightly increased font size */
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
 header .social li {
@@ -185,6 +186,68 @@ header .scrolldown a:hover {
     color: var(--main-color1);
 }
 
+
+section {
+    padding: 120px 0;
+    margin-bottom: 60px;
+}
+
+/* Consistent spacing for rows */
+.row {
+    margin-bottom: 60px;
+    padding: 0 30px;
+}
+
+/* Loading states and animations */
+.loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--main-color1);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Lazy loading image styles */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Skeleton loading effect */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+
+
+
 /* primary navigation
 --------------------------------------------------------------------- */
 #nav-wrap ul, #nav-wrap li, #nav-wrap a {
@@ -197,6 +260,7 @@ header .scrolldown a:hover {
 /* nav-wrap */
 #nav-wrap {
     font: var(--p);
+    font-weight: bold;
     width: 100%;
     text-transform: uppercase;
     letter-spacing: 2.5px;
@@ -276,14 +340,8 @@ ul#nav li.current a { color: var(--main-color1); }
 }
 
 #about .profile-pic {
-    position: relative;
-    width: 20vw; 
-    height: 20vw;
-    max-width: 200px; 
-    max-height: 200px;
-    border-radius: 100%;
-    object-fit: cover;
-    object-position: 40% 10%;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
 }
 
 #about .contact-details h2 {
@@ -334,7 +392,7 @@ ul#nav li.current a { color: var(--main-color1); }
 }
 
 #experience h1 {
-    font: var(--h1);
+    font: var(--h4) !important; /* Adjusted font size */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -343,14 +401,16 @@ ul#nav li.current a { color: var(--main-color1); }
     padding-bottom: 6px;
 }
 #experience h3 {
-    font: var(--h3);
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 #experience .header-col { 
     width: 25%; /* Adjusted width for the header column */
     text-align: left;
     margin-bottom: 20px;
-    margin-left: -35px !important;
+    margin-left: 0;
 }
 
 #experience .header-col h1 {
@@ -360,6 +420,7 @@ ul#nav li.current a { color: var(--main-color1); }
     padding: 0;
     display: inline-block;
     
+    
 }
 
 #experience .main-col { 
@@ -367,6 +428,8 @@ ul#nav li.current a { color: var(--main-color1); }
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    font-size: 1.4rem !important;
+    line-height: 1.6;
 }
 
 .education {
@@ -377,6 +440,7 @@ ul#nav li.current a { color: var(--main-color1); }
 
 #experience span {
     font-weight: bold;
+    color: var(--text-grey);
 }
 
 .skill {
@@ -397,8 +461,9 @@ ul#nav li.current a { color: var(--main-color1); }
     font: var(--p);
     color: #6E7881;
     margin-bottom: 18px;
-    margin-top: 9px;
+    margin-top: 0;
     font-style: italic;
+    
 }
 #experience .info span {
     margin-right: 5px;
@@ -419,6 +484,8 @@ ul#nav li.current a { color: var(--main-color1); }
     background: #E0D9CD;
     padding: 90px 0;
     overflow: hidden;
+    padding-bottom: 0; 
+    margin-bottom: 0;
 }
 
 #projects h1 {
@@ -426,7 +493,12 @@ ul#nav li.current a { color: var(--main-color1); }
     text-align: center;
     margin-bottom: 48px;
     color: var(--color2);
+    margin-top: 20px;
     
+}
+
+.project-other {
+    font: var(--h3) !important;; 
 }
 
 #projects-wrapper {
@@ -445,6 +517,7 @@ ul#nav li.current a { color: var(--main-color1); }
     font-size: 1.6rem !important; /* Increased from default size */
     line-height: 1.6;
     margin-bottom: 20px;
+    
 }
 
  #projects .skill p strong {
@@ -460,9 +533,11 @@ ul#nav li.current a { color: var(--main-color1); }
     margin: 5px 1px 5px 1px;
     background-color: var(--text-grey);
     color: var(--text-white);
-    border-radius: 15px;
+    border-radius: 6px;
     font-size: 1.4rem;
     transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    
 }
 
 .skill-tag:hover {
@@ -493,15 +568,42 @@ ul#nav li.current a { color: var(--main-color1); }
     margin: 5px 1px 5px 1px;
     background-color: var(--text-grey);
     color: var(--text-white);
-    border-radius: 15px;
+    border-radius: 6px;
     font-size: 1.4rem;
     transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 #projects .certs .skill-tag:hover {
     transform: translateY(-2px);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     background-color: var(--color2);
+}
+
+#projects .skill .header-col,
+#projects .certs .header-col {
+    width: 15%; /* Reduced from 25% */
+    padding-left: 20px;
+}
+
+#projects .skill .main-col,
+#projects .certs .main-col {
+    width: 85%; /* Increased from 75% */
+    padding-right: 40px;
+}
+
+/* Adjust skill tags spacing */
+.skill-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 5px 8px 5px 0; /* Adjusted margins */
+}
+
+/* Container max-width */
+#projects .row {
+    max-width: 1400px; /* Increased from default */
+    margin: 0 auto;
+    margin-bottom: 60px;
 }
 
 
@@ -523,6 +625,7 @@ ul#nav li.current a { color: var(--main-color1); }
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
 .projects-item .item-wrap a {
     display: block;
     cursor: pointer;
@@ -753,14 +856,56 @@ ul#nav li.current a { color: var(--main-color1); }
 /* i. Footer
 /* ------------------------------------------------------------------ */
 
+#contact {
+    padding: 60px 0 0 0;
+    background: var(--text-grey);
+    color: var(--text-white);
+}
+
+#contact h2 {
+    font: var(--h2);
+    color: var(--text-white);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    color: #fff;
+}
+
+#contact h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7.5%;
+    height: 3px;
+    background: var(--main-color1);
+    border-radius: 2px;
+}
+
+/* Social Links Container */
+#contact .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    padding: 0;
+}
+
 footer {
     padding-top: 48px;
-    margin-top: auto;
+    margin-top: 0;
     background-color: var(--text-grey);
     color: var(--text-white);
     font-size: 14px;
     text-align: center;
     position: relative;
+    width: 100%;
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 footer h2 {
@@ -770,19 +915,24 @@ footer h2 {
 }
 
 footer .social-links li a { 
-    color: var(--text-white); /* LinkedIn */
+    color: var(--bg-white); 
 }
+
 
 
 /* Hover effect */
 footer .social-links li a:hover {
-    color: #fff;
+    color: var(--color3);
     transition: color 0.3s ease-in-out;
 }
 
 
-footer a, footer a:visited { color: var(--text-white); }
-footer a:hover, footer a:focus { color: #fff; }
+footer a, footer a:visited { 
+    color: var(--text-white); 
+}
+footer a:hover, footer a:focus { 
+    color: #fff; 
+}
 
 /* copyright */
 footer .copyright {
@@ -816,7 +966,7 @@ footer .social-links {
     margin: 18px 0 30px 0;
     padding: 0;
     padding-bottom: 20px;
-    font-size: 30px;
+    font-size: 4rem;
 }
 
 footer .social-links li {
@@ -826,6 +976,8 @@ footer .social-links li {
     margin-left: 42px;
     color: #F06000;
 }
+
+
 
 footer .social-links li:first-child { 
     margin-left: 0; 
@@ -850,13 +1002,36 @@ footer .social-links li:first-child {
     line-height: 42px; /* Center the icon vertically */
     border-radius: 100%;
     text-align: center; /* Center the icon horizontally */
+    
 
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+
+
+
+
+
+
 #go-top a:hover { 
     background-color: #fff;
-    color: var(--color2); /* Change icon color on hover */
+    color: var(--main-color1); /* Change icon color on hover */
 }
+
+#nav a:hover {
+    color: var(--main-color1);
+    transform: translateY(-1px);
+}
+
+profile-pic {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.02);
+}
+
