@@ -19,9 +19,8 @@
     <!-- Header -->
     <header id="home">
         <nav id="nav-wrap">
-            <a class="mobile-btn" href="#nav-wrap" title="Show navigation">☰</a>
             <a class="mobile-btn" href="#" title="Hide navigation">☰</a>
-            <ul id="nav" class="nav">
+            <ul id="nav">
                 <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
                 <li><a class="smoothscroll" href="#about">about</a></li>
                 <li><a class="smoothscroll" href="#projects">projects</a></li>
@@ -55,11 +54,15 @@
         <section id="about">
             <div class="row">
                 <div class="three columns">
-                    <img class="profile-pic lazy-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/headshotpic.jpg" alt="Profile Picture" loading="lazy" />
+                    <img class="profile-pic lazy-image center" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/headshotpic.jpg" alt="Profile Picture" loading="lazy" />
                 </div>
                 <div class="nine columns main-col">
                     <h2>About Me</h2>
-                    <p>📍 Philadelphia, Pennsylvania <br>Hi! I'm a 19 year-old college student & software developer from North Plainfield, NJ. <br>I've always loved anything technology related, from building custom PCs & mechanical keyboards, to hacking/modding retro handhelds like my Nintendo 3Ds and PSVita, and a love and appreciation of video games. <br>Otherwise, ask me about bouldering, or what i'm reading!</p>
+                    <p>📍 Philadelphia, Pennsylvania <br>
+                        <span  class="space">Hi! I'm a 19 year-old college student & software developer from North Plainfield, NJ.</span><br>
+                        <span  class="space">I've always loved anything technology related, from building custom PCs & mechanical keyboards, to hacking/modding retro handhelds like my Nintendo 3Ds and PSVita, and a love and appreciation of video games.</span><br>
+                        <span class="space">Otherwise, ask me about bouldering, or what i'm reading!</span>
+                    </p>
                     <div class="row">
                         
                         <div class="columns download">
@@ -67,7 +70,6 @@
                                 <a href="/images/Marco Given Resume.docx.pdf" target="_blank" class="button"><i class="fa fa-download"></i>Download Resume</a>
                             </p>
                         </div>
-                        
 
                     </div> <!-- end row -->
                 </div> <!-- end .main-col -->
@@ -245,63 +247,64 @@
 
             
         </section> <!-- projects section end -->
-    </main>
 
-<!-- Experience Section(Education/Work/skills)-->
-<section id="experience">
-    <h2>Experience</h2>
+        <!-- Experience Section(Education/Work/skills)-->
+        <section id="experience">
+            
 
-    <!-- Education -->
-    <div class="row education">
-        <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-        </div>
-        
-
-        <div class="nine columns main-col">
-            <div class="row item">
-                <div class="twelve columns">
-                    <h3>Temple University</h3>
-                    <p class="info">B.S. in Computer Science <span>&bull;</span> <em class="date">May 2027</em></p>
-                    <p>I'm a sophomore Computer Science major at Temple University in the College of Science and Technology & Honors Program. I'm skilled in <span>Java and C</span> from coursework, and have self-taught understandings in <span>Python, HTML/CSS, and some C# in Unity</span>. I have experience in leadership as an Honors Ambassadors Coordinator, and Peer mentor. <br><span>Right now I'm actively engaged in university policy through the General Education Executive Committee, event organization, and technical projects.</span>
-                    </p>
+            <!-- Education -->
+            <div class="row education">
+                <h2>Experience</h2>
+                <div class="three columns header-col">
+                    <h1><span>Education</span></h1>
                 </div>
-            </div> <!-- item end-->
-            <div class="row item">
-                <div class="twelve columns">
-                    <h3>North Plainfield High School</h3>
-                    <p class="info">GPA: 3.96 | SAT: 1320 | AP Scholar with Distinction
-                        <span>&bull;</span> <em class="date">June 2023</em></p>
-                    <p>Outside of taking AP Computer Science classes during High School, I fell in love with robotics as <span>a founding member, programming lead (Java), and captain</span> of FIRST Team 9116. Other than leading the FRC team, as head student referee I led the annual First Lego League competition we hosted to promote robotics in the community, especially for younger grades and families.
+                
 
-                    </p>
+                <div class="nine columns main-col">
+                    <div class="row item">
+                        <div class="twelve columns">
+                            <h3>Temple University</h3>
+                            <p class="info">B.S. in Computer Science <span>&bull;</span> <em class="date">May 2027</em></p>
+                            <p>I'm a sophomore Computer Science major at Temple University in the College of Science and Technology & Honors Program. I'm skilled in <span>Java and C</span> from coursework, and have self-taught understandings in <span>Python, HTML/CSS, and some C# in Unity</span>. I have experience in leadership as an Honors Ambassadors Coordinator, and Peer mentor. <br>
+                                <span class="spaced">Right now I'm actively engaged in university policy through the General Education Executive Committee, event organization, and technical projects.</span>
+                            </p>
+                        </div>
+                    </div> <!-- item end-->
+                    <div class="row item">
+                        <div class="twelve columns">
+                            <h3>North Plainfield High School</h3>
+                            <p class="info">GPA: 3.96 | SAT: 1320 | AP Scholar with Distinction
+                                <span>&bull;</span> <em class="date">June 2023</em></p>
+                            <p>Outside of taking AP Computer Science classes during High School, I fell in love with robotics as <span>a founding member, programming lead (Java), and captain</span> of FIRST Team 9116. Other than leading the FRC team, as head student referee I led the annual First Lego League competition we hosted to promote robotics in the community, especially for younger grades and families.
+
+                            </p>
+                        </div>
+                    </div> <!--Item end -->
+
+                </div> <!--main-col end -->
+            </div> <!-- End Education -->
+
+            <!-- Work Experience -->
+            <div class="row work">
+                <div class="three columns header-col">
+                    <h1 ><span>Work</span></h1>
                 </div>
-            </div> <!--Item end -->
 
-        </div> <!--main-col end -->
-    </div> <!-- End Education -->
+                <div class="nine columns main-col">
+                    <div class="row item">
+                        <div class="twelve columns">
+                            <h3>Temple University Honors Program</h3>
+                            <p class="info">Honors Student Worker <span>&bull;</span> <em class="date">February 2024 - Present</em></p>
+                            <p>
+                                Currently in a project-based role as an Honors Program student worker. Other than assisting with advising check-in, I work on projects for the Temple University Honors Program such as cleaning and organizing data of honors courses, <span>updating website content</span>, and <span>utilizing Tableau for data visualization</span> for internal reports. 
+                            </p>
+                        </div>
+                    </div> <!-- item end-->
+                </div> <!-- main-col end -->
+            </div> <!-- end work-->
 
-    <!-- Work Experience -->
-    <div class="row work">
-        <div class="three columns header-col">
-            <h1 ><span>Work</span></h1>
-        </div>
-
-        <div class="nine columns main-col">
-            <div class="row item">
-                <div class="twelve columns">
-                    <h3>Temple University Honors Program</h3>
-                    <p class="info">Honors Student Worker <span>&bull;</span> <em class="date">February 2024 - Present</em></p>
-                    <p>
-                        Currently in a project-based role as an Honors Program student worker. Other than assisting with advising check-in, I work on projects for the Temple University Honors Program such as cleaning and organizing data of honors courses, <span>updating website content</span>, and <span>utilizing Tableau for data visualization</span> for internal reports. 
-                    </p>
-                </div>
-            </div> <!-- item end-->
-        </div> <!-- main-col end -->
-    </div> <!-- end work-->
-
-    
-</section> <!-- experience section end -->
+            
+        </section> <!-- experience section end -->
 
 
         <!-- Contact Section -->
@@ -313,9 +316,9 @@
                     <div class="six columns">
                         <form action="mailto:marcogiven15@gmail.com" method="post" enctype="text/plain">
                             <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
+                            <input autocomplete="on" type="text" id="name" name="name" required>
                             <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input autocomplete="on" type="email" id="email" name="email" required>
                             <label for="message">Message:</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                             <input type="submit" value="Send">
@@ -331,82 +334,86 @@
             </div>
             
         </section>
-        <footer>
-            <div class="row">
-                <div class="twelve columns">
-                    <ul class="social-links">
-                        <li><a href="https://www.linkedin.com/in/marco-given/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="https://github.com/MarcoGiven" target="_blank"><i class="fab fa-github"></i></a></li>
-                        <li><a href="https://app.joinhandshake.com/profiles/49949845" target="_blank"><i class="fa fa-handshake"></i></a></li>
-                        <li><a href="mailto:marcogiven15@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-                        
-                    </ul>
+    </main>
 
-                    <ul class="copyright">
-                        <li>&copy;2024 MarcoGiven</li>
-                        <li>Design by <a href="http://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>   
-                    </ul>
-                </div>
-                <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="fa fa-arrow-circle-up"></i></a></div>
+
+    <footer>
+        <div class="row">
+            <div class="twelve columns">
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/marco-given/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/MarcoGiven" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://app.joinhandshake.com/profiles/49949845" target="_blank"><i class="fa fa-handshake"></i></a></li>
+                    <li><a href="mailto:marcogiven15@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    
+                </ul>
+
+                <ul class="copyright">
+                    <li>&copy;2024 MarcoGiven</li>
+                    <li>Design by <a href="https://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>   
+                </ul>
             </div>
+            <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="fa fa-arrow-circle-up"></i></a></div>
+        </div>
 
-        </footer> <!-- footer end -->
+    </footer> <!-- footer end -->
 
         <!-- JAVASCRIPT HERE? -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-        <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 
-        <script src="js/jquery.flexslider.js"></script>
-        <script src="js/waypoints.js"></script>
-        <script src="js/jquery.fittext.js"></script>
-        <script src="js/magnific-popup.js"></script>
-        <script src="js/init.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/waypoints.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/magnific-popup.js"></script>
+    <script src="js/init.js"></script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Lazy loading images
-                const images = document.querySelectorAll('.lazy-image');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy loading images
+            const images = document.querySelectorAll('.lazy-image');
+            
+            const loadImage = (image) => {
+                image.classList.add('loading');
+                const src = image.getAttribute('data-src');
+                if (!src) return;
                 
-                const loadImage = (image) => {
-                    image.classList.add('loading');
-                    const src = image.getAttribute('data-src');
-                    if (!src) return;
-                    
-                    image.src = src;
-                    image.addEventListener('load', () => {
-                        image.classList.remove('loading');
-                        image.classList.add('loaded');
-                    });
-                };
-            
-                // Intersection Observer for lazy loading
-                const imageObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            loadImage(entry.target);
-                            imageObserver.unobserve(entry.target);
-                        }
-                    });
+                image.src = src;
+                image.addEventListener('load', () => {
+                    image.classList.remove('loading');
+                    image.classList.add('loaded');
                 });
-            
-                images.forEach(img => imageObserver.observe(img));
+            };
+        
+            // Intersection Observer for lazy loading
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadImage(entry.target);
+                        imageObserver.unobserve(entry.target);
+                    }
+                });
             });
-            </script>
+        
+            images.forEach(img => imageObserver.observe(img));
+        });
+    </script>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var mobileBtn = document.querySelectorAll('#nav-wrap .mobile-btn');
-                    var nav = document.querySelector('#nav-wrap ul');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileBtn = document.querySelector('#nav-wrap .mobile-btn'); // Select the mobile button
+            const nav = document.querySelector('#nav-wrap ul'); // Select the navigation menu
 
-                    mobileBtn.forEach(function(btn) {
-                        btn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            nav.classList.toggle('show');
-                        });
-                    });
-                });
-            </script>
+            // Add a click event listener to the mobile button
+            mobileBtn.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default behavior of the link
+                nav.classList.toggle('show'); // Toggle the 'show' class on the nav element
+            });
+        });
+
+        
+    </script>
 
 </body>
 </DOCTYPE>

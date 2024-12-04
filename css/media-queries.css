@@ -27,59 +27,87 @@
 
     /* header styles
    ------------------------------------------------------------------ */
-   header .banner { padding-bottom: 12px; }
+   header .banner {
+       padding-bottom: 12px; 
+   }
    header .banner-text h1 {
-      font: 78px/1.1em 'opensans-bold', sans-serif;
+      font-family: 'opensans-bold', sans-serif;
+      font-size: 6rem !important; 
       letter-spacing: -1px;      
+      white-space: nowrap;
+      overflow: hidden;
    }
    header .banner-text h3 {
-      font: 17px/1.9em 'librebaskerville-regular', serif;
+      font-family: "opensans-bold", sans-serif;
       width: 80%;
+
    }
    header .banner-text hr {
       width: 65%;
       margin: 12px auto;
    }
+
+   header .social {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 4rem !important;
+   }
+
+
    /* nav-wrap */
    #nav-wrap {
       font: 11px 'opensans-bold', sans-serif;
       letter-spacing: 1.5px;
-   }
+   }  
 
 
    /* About Section
    ------------------------------------------------------------------- */
    #about .profile-pic {
-      width: 114px;
-      height: 114px;
+      width: 150px;
+      height: auto;
       margin-left: 12px;
    }
    #about .contact-details { width: 50%; }
-   #about .download { width: 50%; }
+   #about .download { width: 75%; }
 
-   /* Resume Section
-   ------------------------------------------------------------------- */
-   #resume h1 { font: 16px/24px 'opensans-bold', sans-serif; }
-   #resume .main-col { padding-right: 5%; }   
-
-   /* Testimonials Section
-   ------------------------------------------------------------------- */
-   #testimonials .header-col h1:before {
-      font-size: 66px;
-      line-height: 66px;
+   #projects-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      width: 40%; /* Significantly reduced width */
+      margin: 0 30%; /* Increased side margins */
+      gap: 2px;
    }
-   #testimonials blockquote p {
-      font-size: 22px;
-      line-height: 46px;      
+   
+   .projects-item {
+      flex: 0 1 calc(33.33% - 2px);
+      max-width: calc(33.33% - 2px);
+      margin: 0;
+      padding: 0 5px; /* Added horizontal padding */
+   }
+   
+   .projects-item .item-wrap {
+      width: 85%; /* Further reduced width */
+      margin: 0 auto;
+   }
+   
+   .projects-item .item-wrap img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+   }
+   
+   .skills-certs-container {
+      padding: 0;
+      padding-bottom: 30px;
+      gap: 5px; /* Even smaller gap on mobile */
    }
 
-    /* Call to Action Section
-   ------------------------------------------------------------------- */
-   #call-to-action .header-col h1:before {
-      font-size: 66px;
-      line-height: 66px;
-   }
+   
 
+
+   
    /* Contact Section
    ------------------------------------------------------------------- */
    #contact .section-head { margin-bottom: 30px; }
@@ -92,11 +120,46 @@
 
 }
 
-/* mobile wide/smaller tablets
----------------------------------------------------------------------- */
+/* mobile narrow
+  -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+   /* mobile navigation
+   -------------------------------------------------------------------- */
+   #nav-wrap ul#nav { width: auto; float: none; }
+
+   /* header styles
+   -------------------------------------------------------------------- */
+   header .banner { padding-top: 24px; }
+   header .banner-text h1 {
+      font: 40px/1.1em 'opensans-bold', sans-serif;      
+      margin: 0 auto 24px auto;
+   }
+   header .banner-text h3 {
+      font: 14px/1.9em 'librebaskerville-regular', sans-serif;
+      width: 90%;
+   }
+  
+   /* header social links */
+   header .social { font-size: 20px;}
+   header .social li { margin: 0 6px; }
+
+   /* footer
+   ------------------------------------------------------------------------ */
+
+   /* social links */
+   footer .social-links { font-size: 20px; }
+   footer .social-links li { margin-left: 14px; }   
+
+}
+
+/* ------------------------------------------------------------------ */
+/* h. Mobile Formatting
+/* ------------------------------------------------------------------ */
 
 @media only screen and (max-width: 767px) {
-
+   
    /* mobile navigation
    -------------------------------------------------------------------- */
    #nav-wrap {
@@ -108,11 +171,22 @@
       top: 0;
       right: 0;
    }
+   #nav-wrap ul {
+      display: none;
+   }
+
+   #nav-wrap ul.show {
+      display: block !important;
+      background-color: #000;
+      opacity: 0.5;
+      padding-right: 10px;
+   }
+
    #nav-wrap > a {
 	   width: 48px;
 		height: 48px;
 		text-align: left;
-		background-color: #CC5200;
+		background-color: var(--main-color1);
 		position: relative;
       border: none;
       float: right;
@@ -126,8 +200,7 @@
       right: 30px;
    }
 
-	#nav-wrap > a:before,
-   #nav-wrap > a:after {
+	#nav-wrap > a:before, #nav-wrap > a:after {
 	   position: absolute;
 		border: 2px solid #fff;
 		top: 35%;
@@ -135,11 +208,13 @@
 		right: 25%;
 		content: '';
 	}
-   #nav-wrap > a:after { top: 60%; }
+
+   #nav-wrap > a:after { 
+      top: 60%; 
+   }
 
    /* toggle buttons */
-	#nav-wrap:not( :target ) > a:first-of-type,
-	#nav-wrap:target > a:last-of-type  {
+	#nav-wrap:not( :target ) > a:first-of-type, #nav-wrap:target > a:last-of-type  {
 	   display: block;
 	}
 
@@ -184,6 +259,14 @@
       border: none;
    }  
 
+    /* Hamburger menu color */
+   #nav-wrap .mobile-btn {
+      color: var(--main-color1) !important;
+   }
+
+  
+
+
 
    /* Header Styles
    -------------------------------------------------------------------- */
@@ -215,41 +298,19 @@
 
    /* About Section
    -------------------------------------------------------------------- */
-   #about .profile-pic { display: none; }
+   
    #about .download .button {
       width: 100%;
       text-align: center;
       padding: 15px 20px;
    }
-   #about .main-col { padding-right: 30px; }
-
-
-   /* Resume Section
-   --------------------------------------------------------------------- */
-   #resume .header-col {
-      padding-top: 0;
-      margin-bottom: 48px;
-      text-align: center;
+   #about .main-col { 
+      padding-right: 30px; 
    }
-   #resume h1 { letter-spacing: 3px; }
-   #resume .main-col { padding-right: 30px; }
-   #resume h3, #resume .info { text-align: center; }
-      
-   .bars { width: 100%; }
 
 
-   /* Call To Action Section
-   /* ----------------------------------------------------------------- */
-   #call-to-action { text-align: center; }
-   #call-to-action h1 {
-      font: 16px/24px 'opensans-bold', sans-serif;
-      text-align: center;
-      margin-bottom: 30px;
-      text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
-   }
-   #call-to-action h1 span { display: block; }
-   #call-to-action .header-col h1:before { content: none; }
-   #call-to-action p { font-size: 15px; }
+   
+
 
 
    /* Portfolio Section
@@ -257,23 +318,6 @@
    #portfolio-wrapper .columns { margin-bottom: 40px; }
    .popup-modal {	max-width: 85%; }
 
-
-   /* Testimonials Section
-   ----------------------------------------------------------------------- */
-   #testimonials .text-container { text-align: center; }
-   #testimonials h1 {
-      font: 16px/24px 'opensans-bold', sans-serif;
-      text-align: center;
-      margin-bottom: 30px;
-      text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
-   }
-   #testimonials h1 span { display: block; }
-   #testimonials .header-col h1:before { content: none; }
-   #testimonials blockquote { padding-bottom: 24px; }
-   #testimonials blockquote p {
-      font-size: 20px;
-      line-height: 42px;      
-   }
 
    /* Control Nav */
    .flex-control-nav {
@@ -284,27 +328,43 @@
 
    /* contact Section
    ----------------------------------------------------------------------- */
-   #contact { padding-bottom: 66px; }
-   #contact .section-head { margin-bottom: 12px; }
+   #contact { 
+      padding-bottom: 66px; 
+   }
+
+   #contact .section-head { 
+      margin-bottom: 12px; 
+   }
+
    #contact .section-head h1 {
       font: 16px/24px 'opensans-bold', sans-serif;            
       text-align: center;   
       margin-bottom: 30px;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
    }  
-   #contact h1 span { display: block; }
-   #contact .header-col { padding-top: 0; }
-   #contact .header-col h1:before { content: none;	}
-   #contact .section-head p.lead { text-align: center;}
+
+   #contact h1 span { 
+      display: block; 
+   }
+
+   #contact .header-col { 
+      padding-top: 0; 
+   }
+
+   #contact .header-col h1:before { 
+      content: none;	
+   }
+
+   #contact .section-head p.lead { 
+      text-align: center;
+   }
 
    /* form */
    #contact label {
       float: none;
       width: 100%;
    }
-   #contact input,
-   #contact textarea,
-   #contact select {
+   #contact input, #contact textarea, #contact select {
      	margin-bottom: 6px;    	
       width: 100%;
    }
@@ -327,51 +387,221 @@
    footer .social-links li { margin-left: 18px; }
 
    /* Go To Top Button */
-   #go-top { margin-left: -22px; }
-   #go-top a {
-   	width: 54px;
-   	height: 54px;
-      font-size: 18px;
-      line-height: 54px;
+   #go-top { 
+      display: block;
+      justify-content: center !important;
    }
 
 
-}
 
-/* mobile narrow
-  -------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 480px) {
-
-   /* mobile navigation
-   -------------------------------------------------------------------- */
-   #nav-wrap ul#nav { width: auto; float: none; }
-
-   /* header styles
-   -------------------------------------------------------------------- */
-   header .banner { padding-top: 24px; }
+   .row {
+     margin: 0 !important;
+     padding: 0 !important;
+   }
+ 
+  
+ 
+   /* Scale down heading text */
    header .banner-text h1 {
-      font: 40px/1.1em 'opensans-bold', sans-serif;      
-      margin: 0 auto 24px auto;
+     font-size: 3rem !important; /* Adjusted size */
+     word-wrap: break-word; /* Ensure text wraps within the screen */
+     text-align: center; /* Left-align text */
    }
    header .banner-text h3 {
-      font: 14px/1.9em 'librebaskerville-regular', sans-serif;
-      width: 90%;
+     font-size: 1.5rem !important; /* Adjusted size */
+     text-align: center; /* Left-align text */
    }
-  
-   /* header social links */
-   header .social { font-size: 20px;}
-   header .social li { margin: 0 6px; }
-
-   /* footer
-   ------------------------------------------------------------------------ */
-
-   /* social links */
-   footer .social-links { font-size: 20px; }
-   footer .social-links li { margin-left: 14px; }   
-
-}
-
+ 
+   header {
+     overflow-x: hidden;
+     width: auto;
+     position: relative;
+     height: 82vh !important;
+     background: var(--text-grey)
+     url("../images/matt-benson-rvfm_b1C6lc-unsplash.jpg") no-repeat top/cover;
+     text-align: center;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+ 
+   header .banner-text hr {
+     width: 75%;
+     margin: 18px auto 24px auto;
+     margin-bottom: 0 !important;
+     padding-bottom: 0 !important;
+     border: 1px solid rgba(255, 255, 255, 0.75);
+   }
+ 
+   header .social {
+     margin-top: 0;
+     padding-top: 0;
+     font-size: 2.8rem !important;
+   }
+ 
+   main {
+     margin-left: 0 !important;
+     padding-left: 0!important;
+   }
+ 
+   
+ 
+   #about .contact-details, #about .download {
+     width: 100%; /* Full width */
+     text-align: center; /* Center text */
+   }
+ 
+   #about .main-col span {
+     display: block;
+     margin-top: 5px !important; /* Increase the spacing between paragraphs */
+   }
+   
+ 
+   #about .row {
+     display: flex;
+     flex-direction: column; /* Stack the columns vertically */
+   }
+ 
+   #about .three.columns {
+     order: 3; /* Move below the "about me" section */
+     display: block; /* Ensure it is displayed */
+     width: 100%; /* Full width */
+     margin-top: 20px; /* Add some margin for spacing */
+   }
+ 
+   #about .nine.columns.main-col {
+     order: 1; /* Ensure the "about me" section is first */
+   }
+ 
+   #about .download {
+     order: 2; /* Ensure the download button is second */
+     width: 100%; /* Full width */
+     text-align: center; /* Center text */
+   }
+ 
+   #about .profile-pic {
+     display: block !important; /* Ensure it is displayed */
+     max-width: 100%; 
+     height: auto !important; /* Ensure it maintains aspect ratio */
+     margin: 0 auto 20px auto; /* Center and add margin */
+     position: relative !important; /* Ensure visibility */
+     z-index: 1 !important;
+     
+   }
+ 
+   #about .three.columns img {
+     width: 100%; /* Ensure the image takes full width of its container */
+     height: auto; /* Maintain aspect ratio */
+     justify-content: center;
+     margin-left: 0;
+   }
+ 
+   .row {
+     margin: 0;
+     padding: 0;
+   }
+ 
+   #experience h2 {
+     margin-left: 15px;
+     margin-bottom: 10px;
+   }
+ 
+   #experience .twelve.columns {
+     margin-left: 10px !important;
+     padding: 0 !important;
+     width: 100%
+   }
+ 
+   .spaced {
+     display: inline-block;
+     margin-top: 15px !important;
+   }
+ 
+   .three.columns.header-col {
+     padding-top: 15px;
+   }
+ 
+   /* Fix email form box overlapping contact details */
+   #contact .row {
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+     width: 100% !important;
+     
+   }
+ 
+ 
+   #contact .six.columns {
+     width: 100%; /* Full width */
+     margin-bottom: 20px; /* Add margin */
+     padding: 0;
+     
+   }
+ 
+ 
+ 
+   #contact h3 {
+     padding-top: 15px;
+   }
+ 
+   #projects-wrapper {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     margin-top: 0;
+     padding-top: 0;
+   }
+ 
+   #projects h1 {
+     font-size: 3rem;
+   }
+ 
+ 
+   .projects-item {
+     flex: 0 0 100%; /* Make each project item take full width */
+     max-width: 100%;
+     margin-bottom: 20px; /* Add some space between items */
+   }
+   .project-other{
+     margin-left: 0;
+     padding-left: 0;
+   }
+   .projects-item .item-wrap {
+     margin: 0 auto; /* Center the content inside each project item */
+   }
+   
+   .skills-certs-container {
+     padding: 0;
+     padding-bottom: 30px;
+     gap: 5px; /* Even smaller gap on mobile */
+   }
+ 
+   #projects strong {
+     padding-bottom: 0;
+     margin-bottom: 0;
+   }
+ 
+   .skill-tag {
+     font-size: 1.125rem;
+     padding: 4px 10px;
+   }
+   
+   .skills .main-col,
+   .certs .main-col {
+     justify-content: left;
+     text-align: left;
+   }
+ 
+   #go-top {
+     justify-content: center !important;
+     margin-left: 0;
+     padding-left: 0;
+   }
+ }
+ 
+ 
 
 
 
