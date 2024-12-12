@@ -1,0 +1,25 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect HTTP to HTTPS and enforce www (optional)
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Error handling
+ErrorDocument 404 /MarcoGiven404page.html
+
+# Cache static files for 1 year
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js|pdf|ico|woff|woff2|ttf)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Security Headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+Header set X-XSS-Protection "1; mode=block"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'; object-src 'none';"
+
+# Log 404 errors (optional)
+CustomLog /path/to/your/logs/404-errors.log combined env=404

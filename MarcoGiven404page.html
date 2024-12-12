@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .banner {
+            width: 100%;
+            background-color: #ff7f7f; /* Softer red color */
+            color: white;
+            text-align: center;
+            padding: 10px 0; /* Reduced padding for less space */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 16px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            width: 900px;
+            height: 450px;
+            overflow: hidden;
+            margin-top: 20px; /* Space between banner and card */
+        }
+
+        .left-section {
+            flex: 2;
+            text-align: left;
+        }
+
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .right-section img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .right-section .scan-me {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .subheading {
+            font-size: 24px;
+            margin: 10px 0 20px;
+            font-weight: 400;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact a i {
+            font-size: 35px;
+            margin-right: 10px;
+            color: #B0B0B0;
+        }
+
+        .contact .phone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact .phone i {
+            font-size: 35px;
+            margin-right: 10px;
+            color: #B0B0B0;
+        }
+
+        .left-section .logo {
+            width: 100%;
+            height: auto;
+        }
+
+        .contact a:hover {
+            color: #0073e6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        404 - Page Not Found
+    </div>
+    <div class="card">
+        <div class="left-section">
+            <!-- SVG Logo Placeholder -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="logo" height="100px"> 
+                <image href="images/Marco Given-logo/vector/default-monochrome.svg" width="425px"/>
+            </svg>
+
+            <p class="subheading">Software Development</p>
+
+            <div class="contact">
+                <a href="https://linkedin.com/in/Marco-Given" target="_blank">
+                    <i class="fab fa-linkedin"></i>Marco-Given
+                </a>
+                <a href="https://github.com/MarcoGiven" target="_blank">
+                    <i class="fab fa-github"></i>MarcoGiven
+                </a>
+                <div class="phone" target="_blank">
+                    <i class="fas fa-phone"></i>908-644-5801
+                </div>
+                <a href="http://www.marcogiven.com" target ="_blank">
+                    <i class="fas fa-globe"></i>www.marcogiven.com
+                </a>
+            </div>
+        </div>
+        <div class="right-section">
+            <!-- <img src="images/frame.png" alt="404 Error Page"> -->
+        </div>
+    </div>
+</body>
+</html>
