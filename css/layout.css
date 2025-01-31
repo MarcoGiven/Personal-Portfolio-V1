@@ -68,6 +68,7 @@ body {
 
 main {
   flex: 1;
+  
 }
 
 
@@ -120,8 +121,8 @@ header .banner-text h1 {
   text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #1b1b32;
-  animation: typing 4s steps(22, end), blink 0.6s step-end infinite;
+  border-right: 3px solid currentColor;
+  animation: typing 1.75s steps(22, end), blink-border 1s step-start infinite 4s;
 }
 
 /* Adjust animation width for larger text */
@@ -135,11 +136,12 @@ header .banner-text h1 {
 }
 
 /* Cursor blinking keyframes */
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+@keyframes blink-border {
+  0% { border-right-color: transparent; }
+  50% { border-right-color: currentColor; }
+  100% { border-right-color: transparent; }
 }
+
 
 header .banner-text h3 {
   font-size: 2.5rem !important;
@@ -231,6 +233,10 @@ section {
 .row {
   margin-bottom: 60px;
   padding: 0 30px;
+}
+
+.row:not(#about .row){
+  max-width: 1400px;
 }
 
 /* Loading states and animations */
@@ -376,7 +382,7 @@ ul#nav li.current a {
 }
 
 #about a, #about a:visited {
-  color: #fff;
+  color: #ffff;
 }
 #about a:hover, #about a:focus {
   color: var(--main-color1);
@@ -400,7 +406,8 @@ ul#nav li.current a {
 
 #about .profile-pic {
   border-radius: 15px;
-  box-shadow: var(--shadow);
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #about .contact-details h2 {
@@ -493,6 +500,7 @@ ul#nav li.current a {
   margin-bottom: 0px;
 }
 
+
 /* Skill Tags Styling */
 .skill-tag {
   display: inline-block;
@@ -505,6 +513,8 @@ ul#nav li.current a {
   line-height: 1;
   transition: all 0.3s ease;
 }
+
+
 
 .skill-tag:hover {
   transform: translateY(-2px);
@@ -573,10 +583,12 @@ ul#nav li.current a {
   margin: 0;
 }
 
+
 .projects-item .item-wrap {
   background: #fff;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -588,6 +600,7 @@ ul#nav li.current a {
 .projects-item .item-wrap a {
   display: block;
   cursor: pointer;
+  
 }
 
 /* overlay */
@@ -636,6 +649,7 @@ ul#nav li.current a {
 }
 
 .projects-item .item-wrap img {
+  
   vertical-align: bottom;
 }
 
@@ -673,6 +687,7 @@ ul#nav li.current a {
   background: #fff;
   position: relative;
   margin: 0 auto;
+ 
 }
 
 .popup-modal .description-box {
@@ -710,6 +725,10 @@ ul#nav li.current a {
   text-align: left;
 }
 
+.popup-modal .a {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More defined shadow */
+}
+
 .popup-modal .link-box a {
   color: #fff;
   font: var(--big);
@@ -719,9 +738,7 @@ ul#nav li.current a {
   cursor: pointer;
 }
 
-.popup-modal a:hover {
-  color: var(--main-color1);
-}
+
 
 .popup-modal a.popup-modal-dismiss {
   margin-left: 24px;
@@ -977,7 +994,7 @@ ul#nav li.current a {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More defined shadow */
-  max-width: 1000px; /* Increase max-width to make it wider */
+  max-width: 1400px; /* Increase max-width to make it wider */
   margin: 0 auto;
 }
 
@@ -1003,7 +1020,7 @@ ul#nav li.current a {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px; /* Adjust max-width to make it shorter */
+  max-width: 550px; /* Adjust max-width to make it shorter */
 }
 
 #contact form label {
@@ -1038,14 +1055,14 @@ ul#nav li.current a {
 }
 
 #contact .six.columns p {
-  font-size: 1.3rem;
+  font-size: 1.75rem;
   line-height: 1.6;
   color: var(--text-grey);
   margin-bottom: 8px; /* Improve spacing */
 }
 
 #contact .six.columns h3 {
-  font-size: 2.25rem;
+  font-size: 2.55rem;
   margin-bottom: 15px;
 }
 
