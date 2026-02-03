@@ -112,6 +112,10 @@
 
     });
 
+    if (window.location.hash && window.location.hash.startsWith('#modal-')) {
+      history.replaceState(null, document.title, window.location.pathname);
+    }
+
     $(document).on('click', '.popup-modal-dismiss', function (e) {
     		e.preventDefault();
     		$.magnificPopup.close();
