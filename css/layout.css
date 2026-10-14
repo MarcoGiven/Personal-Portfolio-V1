@@ -655,9 +655,10 @@ ul#nav li.current a {
     padding-bottom: 6px;
 }
 #projects-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Reduced from default */
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    column-gap: 75px;
+    row-gap: 20px;
     justify-content: center;
     padding: 20px 0;
 }
@@ -667,7 +668,43 @@ ul#nav li.current a {
   margin-bottom: 0px;
 }
 
+#projects-wrapper .projects-item {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    float: none;
+    clear: none;
+    padding: 0;
+    margin: 0;
+}
+
+#projects-wrapper .item-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* Skill Tags Styling */
+
+/* Skills category titles */
+.skill-group-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-grey);
+    margin: 0 0 8px;
+}
+
+/* Spacing between skill categories */
+.skill-group {
+    margin-bottom: 20px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
 .skill-tag {
     display: inline-block;
     background-color: var(--text-grey);
@@ -761,13 +798,6 @@ ul#nav li.current a {
   margin-bottom: 60px;
 }
 
-.projects-item {
-    flex: 1 1 calc(33.333% - 20px);
-    min-width: 280px; /* Reduced from 300px */
-    max-width: 300px; /* Added max-width constraint */
-    margin: 0;
-}
-
 .projects-item .item-wrap {
   background: #fff;
   overflow: hidden;
@@ -835,11 +865,14 @@ ul#nav li.current a {
   padding: 18px;
 }
 .projects-item .projects-item-meta h5 {
-  font: var(--h4);
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.4;
   color: #fff;
 }
 .projects-item .projects-item-meta p {
-  font: var(--big);
+  font-size: 1.05rem;
+  line-height: 1.4;
   color: #c6c7c7;
   margin-bottom: 0;
 }
@@ -1034,6 +1067,22 @@ ul#nav li.current a {
   background: #fff;
   background: rgba(255, 255, 255, 0.9);
   cursor: default;
+}
+
+@media (max-width: 850px) {
+    #projects-wrapper {
+        grid-template-columns: repeat(2, 240px);
+    }
+}
+
+@media (max-width: 600px) {
+    #projects-wrapper {
+        grid-template-columns: minmax(0, 240px);
+    }
+
+    #projects-wrapper .projects-item {
+        width: 100%;
+    }
 }
 
 /* ------------------------------------------------------------------ */
